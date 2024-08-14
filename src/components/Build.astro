@@ -1,0 +1,82 @@
+---
+import CardGrid from "@components/CardGrid.astro"
+
+
+const cardsTitles:string[] = [
+    "Магазины из сэндвича", 
+    "Производственные помещения",
+    "Станции технического обслуживания",
+    "Быстровозводимые ангары из сэндвич панелей",
+    "Строительство складов и ангаров",
+    "Строительство автомоек",
+    "Строительство торговых павильонов",
+    "Строительство овощехранилищ",
+    "Строительство холодных и утепленных складов и ангаров под ключ",
+    "Монтаж металлоконструкций",
+    "Быстровозводимые ангары из сэндвич панелей",
+    "Быстровозводимые здания из сэндвич панелей",
+    "Быстровозводимые дома",
+    "Быстровозводимые склады из сэндвич панелей"    
+]
+
+---
+
+<section class="build">
+    <div class="build__wrapper">
+        <h2 class="title">
+            Мы построим следующие объекты по Вашим размерам
+        </h2>
+        <div class="build__description">
+            <p class="build__description-text">
+                Строим быстровозводимые здания и ангары и проектируем здания различных видов предназначения , склады, строения, сооружения под различные задачи. Можем рассмотреть  строительство зданий из любых материалов.
+            </p>
+            <p class="build__description-subtitle">
+                В работу берем объекты от 200 м2
+            </p>
+        </div>
+        <CardGrid {cardsTitles}/>
+            
+        </div>
+        
+    </div>
+</section>
+
+<style is:global lang="scss">
+    .title{
+        font-size: 44px;
+        text-transform: uppercase;
+        font-weight: 800;
+        line-height: 50px;
+        width:70%;
+        &--clrWhite{
+            color: white;
+        }
+    }
+    .build{
+        @include section;
+        padding-top: 120px;
+        padding-bottom: 120px;
+        &__description{
+            margin-top: 24px;
+            
+            &-text{
+                color:#5A5A5A;
+                font-size: 18px;
+                line-height: 28px;
+                width:68%;
+            }
+            &-subtitle{
+                margin-top: 20px;
+                margin-bottom: 40px;
+                color:#281D15;
+                font-weight: 700;
+            }
+        }
+        &__wrapper{
+            grid-area: center;
+        }
+        
+        
+    }
+    
+</style>

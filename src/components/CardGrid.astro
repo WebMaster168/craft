@@ -1,0 +1,28 @@
+---
+import Card from "@components/Card.astro"
+
+interface Props{
+    cardsTitles: string[]
+}
+
+const {cardsTitles} = Astro.props
+
+---
+
+<div class="cardGrid">
+    {
+        cardsTitles.map(title=>(
+            
+            <Card {title}/>
+            
+        ))              
+    }
+</div>
+
+<style is:global lang="scss">
+    .cardGrid{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+</style>

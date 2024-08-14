@@ -1,0 +1,31 @@
+---
+interface Props{
+    title: string
+}
+
+const {title} = Astro.props
+---
+
+<div class="card">
+    <h3 class="card__title">
+        {title}
+    </h3>
+</div>
+
+<style is:global lang="scss">
+    .card{
+        height: 260px;
+        padding-left: 24px;
+        padding-bottom: 24px;
+        padding-right: 31px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%), url('img/itemBg.jpg');
+        display: flex;
+        align-items: flex-end;
+        &__title{
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+
+        }
+    }
+</style>
