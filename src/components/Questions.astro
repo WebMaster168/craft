@@ -1,0 +1,85 @@
+---
+
+---
+
+<div class="questions">
+    <div class="questions__item">
+        <div class="questions__item-title">
+            Каковы преимущества быстровозводимых зданий?
+        </div>
+        <div class="questions__item-toggle">
+            <p>+</p>
+        </div>
+    </div>
+    <div class="questions__item">
+        <div class="questions__item-title">
+            Насколько прочен и безопасен каркас зданий?
+        </div>
+        <div class="questions__item-toggle">
+            <p>+</p>
+        </div>
+    </div>
+    <div class="questions__item">
+        <div class="questions__item-title">
+            Сколько времени займет строительство здания с учетом времени доставки?
+        </div>
+        <div class="questions__item-toggle">
+            <p>+</p>
+        </div>
+    </div>
+    <div class="questions__item">
+        <div class="questions__item-title">
+            На какую нагрузку рассчитаны здания (ветровую, снеговую и т. д.)?
+        </div>
+        <div class="questions__item-toggle">
+            <p>+</p>
+        </div>
+    </div>
+    <div class="questions__item">
+        <div class="questions__item-title">
+            Здания являются теплыми или холодными?
+        </div>
+        <div class="questions__item-toggle">
+            +
+        </div>
+    </div>
+</div>
+
+<style is:global lang="scss">
+    .questions{
+        margin-bottom: 120px;
+        &__item{
+            position: relative;
+            display: flex;
+            padding-left: 20px;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            background-color: white;
+            justify-content: space-between;
+            
+            position: relative;
+            &-title{
+                padding-right: 20px;
+                
+            }
+            &-toggle{
+                background-color: #C26733;
+                position: absolute;
+                width: 72px;
+                right: 0;
+                height: 100%;
+                color: white;
+                font-size: 54px;
+                top: 0;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            & + .questions__item{
+                margin-top: 10px;
+            }
+        }
+    }
+</style>

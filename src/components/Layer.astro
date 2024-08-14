@@ -1,0 +1,42 @@
+---
+import Questions from "@components/Questions.astro"
+import Claim from "@components/Claim.astro"
+---
+
+<section class="layer">
+    <div class="layer__wrapper">
+        <h2 class="title">
+            Часто задаваемые вопросы
+        </h2>
+        <div class="layer__description">
+            Мы собрали часто задаваемые вопросы наших клиентов и предоставили развернутые ответы. Если у вас остались вопросы, не стесняйтесь обращаться к нам напрямую.
+        </div>
+
+        <Questions />
+        
+
+        <Claim />
+
+
+    </div>
+    
+</section>
+
+<style is:global lang="scss">
+
+    .layer{
+        @include section;
+        background-color: #f5f5f5;
+        &__wrapper{
+            grid-area:center;
+            padding-top: 120px;
+        }
+        &__description{
+            color: #5A5A5A;
+            width: 60%;
+            margin-top: 24px;
+            margin-bottom: 40px;
+        }
+        
+    }
+</style>
