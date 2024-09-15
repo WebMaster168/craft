@@ -84,6 +84,7 @@
 }
 .icon-search:before {
   content: "\e914";
+  color: white;
 }
 .icon-success:before {
   content: "\e915";

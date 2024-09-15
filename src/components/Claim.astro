@@ -2,60 +2,72 @@
 
 ---
 
-<div class="claim">
-    <h1 class="claim__title">Оставьте заявку на бесплатную консультацию</h1>
-    <p class="claim__subtitle">
-        Наш специалист перезвонит в течение 10 минут и поможет найти оптимальное решение.
-    </p>
-    <div class="claim__inner">
-        <div class="claim__item">
-            <input type="text" placeholder="Имя">
-        </div>
-        <div class="claim__item">
-            <input type="tel" placeholder="+7 (___) ___ __-__">
+<section class="claim">
+    <div class="claim__container">
+        <h1 class="claim__title">Оставьте заявку на бесплатную консультацию</h1>
+        <p class="claim__subtitle">
+            Наш специалист перезвонит в течение 10 минут и поможет найти оптимальное решение.
+        </p>
+        <div class="claim__inner">
+            <div class="claim__item">
+                <input type="text" placeholder="Имя">
+            </div>
+            <div class="claim__item">
+                <input type="tel" placeholder="+7 (___) ___ __-__">
+            </div>
+        
+            <button class="claim__btn">Заказать звонок</button>
         </div>
     
-        <button class="claim__btn">Заказать звонок</button>
+        <label class="claim__checkbox">
+            <input type="checkbox" class="check-box" checked />
+            <span class="check-style">Я согласен на обработку моих персональных данных и с условиями <a href="#">политики конфиденциальности.</a></span>
+        </label>
     </div>
-
-    <label class="claim__checkbox">
-        <input type="checkbox" class="check-box" checked />
-        <span class="check-style">Я согласен на обработку моих персональных данных и с условиями политики конфиденциальности.</span>
-    </label>
-</div>
+    
+</section>
 
 <style is:global lang="scss">
     /* Сброс стилей по умолчанию */
-.check-box {
-    appearance: none;
-    background-color: transparent;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 16px;
-    height: 16px;
-}
+    .check-box {
+        appearance: none;
+        background-color: transparent;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 16px;
+        height: 16px;
+    }
 
-/* Стиль для неактивного checkbox */
-.check-box:not(:checked) {
-    background-color: #fff;
-}
+    /* Стиль для неактивного checkbox */
+    .check-box:not(:checked) {
+        background-color: #fff;
+    }
 
-/* Стиль для активного checkbox */
-.check-box:checked {
-    background-color: #C26733;
-}
-.check-style{
-    color: #9C9C9C;
-    
-}
+    /* Стиль для активного checkbox */
+    .check-box:checked {
+        background-color: #C26733;
+    }
+    .check-style{
+        color: #9C9C9C;
+        a{
+            text-decoration: underline;
+        }
+    }
     .claim{
-        background: url('img/Benefits.jpg');
-        background-blend-mode: overlay;
-        background-color:#1F0F06;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        padding-left: 40px;
-        padding-right: 40px;
+        @include section;
+        
+        
+        
+        &__container{
+            grid-area: center;
+            background: url('img/Benefits.jpg');
+            background-blend-mode: overlay;
+            background-color:#1F0F06;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
         &__checkbox{
             margin-top: 16px;
         }
