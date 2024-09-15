@@ -4,60 +4,115 @@
 
 <div class="questions">
     <div class="questions__item">
-        <div class="questions__item-title">
-            Каковы преимущества быстровозводимых зданий?
+        <div class="questions__item-top" data-name="questions-accordeon">
+            <div class="questions__item-title">
+                Каковы преимущества быстровозводимых зданий?
+            </div>
+            <div class="questions__item-toggle">
+                <p>+</p>
+            </div>
         </div>
-        <div class="questions__item-toggle">
-            <p>+</p>
-        </div>
-    </div>
-    <div class="questions__item">
-        <div class="questions__item-title">
-            Насколько прочен и безопасен каркас зданий?
-        </div>
-        <div class="questions__item-toggle">
-            <p>+</p>
+        <div class="questions__item-answer">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem dolor, quod molestias quibusdam excepturi quasi eius placeat minus accusantium repudiandae corporis tempore maxime delectus laborum enim nemo maiores? Deleniti.
         </div>
     </div>
     <div class="questions__item">
-        <div class="questions__item-title">
-            Сколько времени займет строительство здания с учетом времени доставки?
+        <div class="questions__item-top" data-name="questions-accordeon">
+            <div class="questions__item-title">
+                Насколько прочен и безопасен каркас зданий?
+            </div>
+            <div class="questions__item-toggle">
+                <p>+</p>
+            </div>
         </div>
-        <div class="questions__item-toggle">
-            <p>+</p>
-        </div>
-    </div>
-    <div class="questions__item">
-        <div class="questions__item-title">
-            На какую нагрузку рассчитаны здания (ветровую, снеговую и т. д.)?
-        </div>
-        <div class="questions__item-toggle">
-            <p>+</p>
+        <div class="questions__item-answer">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem dolor, quod molestias quibusdam excepturi quasi eius placeat minus accusantium repudiandae corporis tempore maxime delectus laborum enim nemo maiores? Deleniti.
         </div>
     </div>
     <div class="questions__item">
-        <div class="questions__item-title">
-            Здания являются теплыми или холодными?
+        <div class="questions__item-top" data-name="questions-accordeon">
+            <div class="questions__item-title">
+                Сколько времени займет строительство здания с учетом времени доставки?
+            </div>
+            <div class="questions__item-toggle">
+                <p>+</p>
+            </div>
         </div>
-        <div class="questions__item-toggle">
-            +
+        <div class="questions__item-answer">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem dolor, quod molestias quibusdam excepturi quasi eius placeat minus accusantium repudiandae corporis tempore maxime delectus laborum enim nemo maiores? Deleniti.
+        </div>
+    </div>
+    <div class="questions__item">
+        <div class="questions__item-top" data-name="questions-accordeon">
+            <div class="questions__item-title">
+                На какую нагрузку рассчитаны здания (ветровую, снеговую и т. д.)?
+            </div>
+            <div class="questions__item-toggle">
+                <p>+</p>
+            </div>
+        </div>
+        <div class="questions__item-answer">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem dolor, quod molestias quibusdam excepturi quasi eius placeat minus accusantium repudiandae corporis tempore maxime delectus laborum enim nemo maiores? Deleniti.
+        </div>
+    </div>
+    <div class="questions__item">
+        <div class="questions__item-top" data-name="questions-accordeon">
+            <div class="questions__item-title">
+                Здания являются теплыми или холодными?
+            </div>
+            <div class="questions__item-toggle">
+                +
+            </div>
+        </div>
+        <div class="questions__item-answer">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem dolor, quod molestias quibusdam excepturi quasi eius placeat minus accusantium repudiandae corporis tempore maxime delectus laborum enim nemo maiores? Deleniti.
         </div>
     </div>
 </div>
+
+<script>
+    
+
+    const headers = document.querySelectorAll("[data-name='questions-accordeon']");
+    headers.forEach((item) => {
+        const el = item.querySelector(".questions__item-toggle");
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            item.nextElementSibling.classList.toggle('accordeon-disabled');
+            el.classList.toggle('accordeon-active');
+            if(el.textContent.includes("+")){
+                el.textContent = "-"
+            }else{
+                el.textContent = "+"
+            }
+        });
+    });
+
+
+</script>
 
 <style is:global lang="scss">
     .questions{
         margin-bottom: 120px;
         &__item{
-            position: relative;
-            display: flex;
-            padding-left: 20px;
-            padding-top: 24px;
-            padding-bottom: 24px;
             background-color: white;
-            justify-content: space-between;
-            
             position: relative;
+            &-top{
+                position: relative;
+                display: flex;
+                padding-left: 20px;
+                padding-top: 24px;
+                padding-bottom: 24px;
+                
+                justify-content: space-between;
+            }
+            &-answer{
+                padding-left: 20px;
+                padding-top: 24px;
+                padding-bottom: 24px;
+                background-color: #cabdb5;
+                display: none;
+            }
             &-title{
                 padding-right: 20px;
                 
@@ -82,4 +137,9 @@
             }
         }
     }
+
+    .accordeon-disabled {
+        display: block;
+    }
 </style>
+
