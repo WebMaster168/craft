@@ -1,35 +1,35 @@
 ---
-import Questions from "@components/Questions.astro"
-import Claim from "@components/Claim.astro"
+import Questions from "./Questions.astro";
+
+
 ---
 
-<section class="layer">
-    <div class="layer__wrapper">
+<section class="quiz">
+    <div class="quiz__wrapper">
         <h2 class="title">
             Часто задаваемые вопросы
         </h2>
-        <div class="layer__description">
+        <div class="quiz__description">
             Мы собрали часто задаваемые вопросы наших клиентов и предоставили развернутые ответы. Если у вас остались вопросы, не стесняйтесь обращаться к нам напрямую.
         </div>
-
         <Questions />
-        
-
-        
-
-
     </div>
-    
 </section>
 
-<style is:global lang="scss">
+<script>
 
-    .layer{
+</script>
+
+<style is:global lang="scss">
+    .quiz{
         @include section;
         
         &__wrapper{
             grid-area:center;
-            padding-top: 120px;
+            
+        }
+        &__title{
+
         }
         &__description{
             color: #5A5A5A;
@@ -37,6 +37,5 @@ import Claim from "@components/Claim.astro"
             margin-top: 24px;
             margin-bottom: 40px;
         }
-        
     }
 </style>

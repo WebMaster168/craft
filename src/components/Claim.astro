@@ -2,62 +2,84 @@
 
 ---
 
-<div class="claim">
-    <h1 class="claim__title">Оставьте заявку на бесплатную консультацию</h1>
-    <p class="claim__subtitle">
-        Наш специалист перезвонит в течение 10 минут и поможет найти оптимальное решение.
-    </p>
-    <div class="claim__inner">
-        <div class="claim__item">
-            <input type="text" placeholder="Имя">
-        </div>
-        <div class="claim__item">
-            <input type="tel" placeholder="+7 (___) ___ __-__">
+<section class="claim">
+    <div class="claim__container">
+        <h1 class="claim__title">Оставьте заявку на бесплатную консультацию</h1>
+        <p class="claim__subtitle">
+            Наш специалист перезвонит в течение 10 минут и поможет найти оптимальное решение.
+        </p>
+        <div class="claim__inner">
+            <div class="claim__item">
+                <input type="text" placeholder="Имя">
+            </div>
+            <div class="claim__item">
+                <input type="tel" placeholder="+7 (___) ___ __-__">
+            </div>
+        
+            <button class="claim__btn">Заказать звонок</button>
         </div>
     
-        <button class="claim__btn">Заказать звонок</button>
+        <div class="claim__checkbox">
+            <input type="checkbox" class="claim__checkbox-arrow" id="checkbox-1"/>
+            <label for="checkbox-1" class="claim__checkbox-text">Я согласен на обработку моих персональных данных и с условиями <a href="#">политики конфиденциальности.</a></label>
+        </div>
     </div>
-
-    <label class="claim__checkbox">
-        <input type="checkbox" class="check-box" checked />
-        <span class="check-style">Я согласен на обработку моих персональных данных и с условиями политики конфиденциальности.</span>
-    </label>
-</div>
+    
+</section>
 
 <style is:global lang="scss">
     /* Сброс стилей по умолчанию */
-.check-box {
-    appearance: none;
-    background-color: transparent;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 16px;
-    height: 16px;
-}
+    /*.check-box {
+        appearance: none;
+        background-color: transparent;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 16px;
+        height: 16px;
+    }
 
-/* Стиль для неактивного checkbox */
-.check-box:not(:checked) {
-    background-color: #fff;
-}
-
-/* Стиль для активного checkbox */
-.check-box:checked {
-    background-color: #C26733;
-}
-.check-style{
-    color: #9C9C9C;
     
-}
+    .check-box:not(:checked) {
+        background-color: #fff;
+    }
+
+    
+    .check-box:checked {
+        background-color: #C26733;
+    }*/
+
+    .check-box{
+        
+    }
+    .check-style{
+        color: #9C9C9C;
+        a{
+            text-decoration: underline;
+        }
+    }
     .claim{
-        background: url('img/Benefits.jpg');
-        background-blend-mode: overlay;
-        background-color:#1F0F06;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        padding-left: 40px;
-        padding-right: 40px;
+        @include section;
+        
+        
+        
+        &__container{
+            grid-area: center;
+            background: url('img/Benefits.jpg');
+            background-blend-mode: overlay;
+            background-color:#1F0F06;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
         &__checkbox{
             margin-top: 16px;
+            &-arrow{
+                &:checked{
+                    background: #C26733;
+                    
+                }
+            }
         }
         &__title{
             color: #FFFFFF;
@@ -108,9 +130,39 @@
             }
         }
     }
-    .checkbox{
-        &:checked{
-            background-color: #C26733;
-        }
-    }
+    
+    .claim__checkbox {
+    position: relative;
+}
+
+.claim__checkbox-arrow {
+    display: none; /* Скрываем стандартный чекбокс */
+}
+
+.claim__checkbox-text{ 
+    padding-left: 25px; /* Отступ для текста */
+    cursor: pointer; /* Указатель при наведении */
+    position: relative;
+
+}
+.claim__checkbox-text::before{ 
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: none;
+    position: absolute;
+    top: 0; /* Отступ от верха, чтобы по центру */
+    left: 0;
+    transition: background-color 0.2s; /* Плавный переход */
+    background-color: #FFFFFF;
+}
+
+.claim__checkbox-arrow:checked + .claim__checkbox-text::before {
+    background-color: #C26733; /* Цвет фона при чекбоксе */
+    background-image: url('../img/Union.svg'); /* Изображение, которое будет отображаться */
+    background-repeat: no-repeat;
+    background-size: 12px 12px; /* Масштабируем изображение для нужного размера */
+    background-position: center; /* Центрируем изображение */
+}
 </style>
