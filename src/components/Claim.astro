@@ -19,17 +19,17 @@
             <button class="claim__btn">Заказать звонок</button>
         </div>
     
-        <label class="claim__checkbox">
-            <input type="checkbox" class="check-box" checked />
-            <span class="check-style">Я согласен на обработку моих персональных данных и с условиями <a href="#">политики конфиденциальности.</a></span>
-        </label>
+        <div class="claim__checkbox">
+            <input type="checkbox" class="claim__checkbox-arrow" id="checkbox-1"/>
+            <label for="checkbox-1" class="claim__checkbox-text">Я согласен на обработку моих персональных данных и с условиями <a href="#">политики конфиденциальности.</a></label>
+        </div>
     </div>
     
 </section>
 
 <style is:global lang="scss">
     /* Сброс стилей по умолчанию */
-    .check-box {
+    /*.check-box {
         appearance: none;
         background-color: transparent;
         border: 1px solid #ccc;
@@ -38,14 +38,18 @@
         height: 16px;
     }
 
-    /* Стиль для неактивного checkbox */
+    
     .check-box:not(:checked) {
         background-color: #fff;
     }
 
-    /* Стиль для активного checkbox */
+    
     .check-box:checked {
         background-color: #C26733;
+    }*/
+
+    .check-box{
+        
     }
     .check-style{
         color: #9C9C9C;
@@ -70,6 +74,12 @@
         }
         &__checkbox{
             margin-top: 16px;
+            &-arrow{
+                &:checked{
+                    background: #C26733;
+                    
+                }
+            }
         }
         &__title{
             color: #FFFFFF;
@@ -120,9 +130,39 @@
             }
         }
     }
-    .checkbox{
-        &:checked{
-            background-color: #C26733;
-        }
-    }
+    
+    .claim__checkbox {
+    position: relative;
+}
+
+.claim__checkbox-arrow {
+    display: none; /* Скрываем стандартный чекбокс */
+}
+
+.claim__checkbox-text{ 
+    padding-left: 25px; /* Отступ для текста */
+    cursor: pointer; /* Указатель при наведении */
+    position: relative;
+
+}
+.claim__checkbox-text::before{ 
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: none;
+    position: absolute;
+    top: 0; /* Отступ от верха, чтобы по центру */
+    left: 0;
+    transition: background-color 0.2s; /* Плавный переход */
+    background-color: #FFFFFF;
+}
+
+.claim__checkbox-arrow:checked + .claim__checkbox-text::before {
+    background-color: #C26733; /* Цвет фона при чекбоксе */
+    background-image: url('../img/Union.svg'); /* Изображение, которое будет отображаться */
+    background-repeat: no-repeat;
+    background-size: 12px 12px; /* Масштабируем изображение для нужного размера */
+    background-position: center; /* Центрируем изображение */
+}
 </style>
