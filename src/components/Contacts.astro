@@ -9,10 +9,10 @@
             <div class="contacts__info">
                 <h2 class="contacts__info-title">Контакты</h2>
                 <div class="contacts__info-item">
-                    <a class="contacts__info-number" href="tel:+79001000000">+7 (900) 100-00-00</a>
+                    <a class="number" href="tel:+79001000000">+7 (900) 100-00-00</a>
                 </div>
                 <div class="contacts__info-item">
-                    <a class="contacts__info-mail" href="mailto:example@yandex.ru">example@yandex.ru</a>
+                    <a class="mail" href="mailto:example@yandex.ru">example@yandex.ru</a>
                 </div>
                 
             </div>
@@ -91,34 +91,7 @@
                 font-size: 16px;
                 margin-bottom: 10px;
             }
-            &-number{
-                color: #281D15;
-                font-weight: 700;
-                padding-left: 32px;
-                position: relative;
-                &::before{
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    width: 24px;
-                    height: 24px;
-                    background-image: url('img/phone.png');
-                }
-            }
-            &-mail{
-                color: #281D15;
-                font-weight: 700;
-                padding-left: 32px;
-                position: relative;
-                &::before{
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    width: 24px;
-                    height: 24px;
-                    background-image: url('img/Mail.png');
-                }
-            }
+            
             &-item{
                 + .contacts__info-item{
                     margin-top: 12px;
@@ -154,5 +127,38 @@
         }
     }
     
-
+    .number{
+        color: #281D15;
+        font-weight: 700;
+        padding-left: 32px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            background-image: url('img/phone.png');
+        }
+        &--color{
+            color: white;
+        }
+    }
+    .mail{
+        color: #281D15;
+        font-weight: 700;
+        padding-left: 32px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            background-image: url('img/Mail.png');
+        }
+        &--color{
+            color: white;
+        }
+    }
 </style>
