@@ -3,7 +3,162 @@
 ---
 
 <section class="contacts">
-    <div class="contacts__number">
-        89271228774
+    <div class="contacts__wrapper">
+        <div class="contacts__content">
+            <h1 class="contacts__title">Свяжитесь с нами</h1>
+            <div class="contacts__info">
+                <h2 class="contacts__info-title">Контакты</h2>
+                <div class="contacts__info-item">
+                    <a class="number" href="tel:+79001000000">+7 (900) 100-00-00</a>
+                </div>
+                <div class="contacts__info-item">
+                    <a class="mail" href="mailto:example@yandex.ru">example@yandex.ru</a>
+                </div>
+                
+            </div>
+            
+            <div class="contacts__address">
+                <h2 class="contacts__info-title">Адрес</h2>
+                <div class="contacts__address-inner">
+                    <div class="contacts__address-icon icon-location">
+
+                    </div>
+                    <div class="contacts__address-text">
+                        г. Саратов, проспект Столыпина, д.54
+                    </div>
+                </div>
+            </div>
+
+            <div class="contacts__socials">
+                <h2 class="contacts__info-title">Мы в социальных сетях</h2>
+
+                <div class="contacts__socials-inner">
+                    <a class="contacts__link icon-whats-app" href="#">
+
+                    </a>
+                    <a class="contacts__link icon-vk" href="#">
+
+                    </a>
+                    <a class="contacts__link icon-viber" href="#">
+
+                    </a>
+                    <a class="contacts__link icon-telegram" href="#">
+
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="contacts__map">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Abc87344a4eb1a9e34782948fb8e7487408254bc1cfaa8cba8e1e792ddbaeba5c&amp;source=constructor" width="526" height="444" frameborder="0"></iframe>
+        </div>
     </div>
 </section>
+
+
+<style is:global lang="scss">
+    .contacts{
+        @include section;
+        margin-bottom: 120px;
+        &__wrapper{
+            grid-area:center;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+        &__content{
+            padding-top: 40px;
+            padding-left: 40px;
+            padding-bottom: 110px;
+        }
+        &__map{
+            width: 50%;
+            iframe{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__title{
+            text-transform: uppercase;
+            color: black;
+            font-weight: 800;
+            font-size: 44px;
+            margin-bottom: 32px;
+        }
+        &__info{
+            margin-bottom: 32px;
+            &-title{
+                color: #5A5A5A;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            
+            &-item{
+                + .contacts__info-item{
+                    margin-top: 12px;
+                }
+            }
+        }
+        &__address{
+            margin-bottom: 32px;
+            &-inner{
+                display: flex;
+                align-items: center;
+            }
+            &-icon{
+                color: #C26733;
+                width: 16px;
+                height: 20px;
+            }
+            &-text{
+                margin-left: 12px;
+                color: #281D15;
+                font-weight: 700;
+                font-size: 18px;
+                margin-top: -5px;
+            }
+        }
+        &__link{
+            color: #C26733;
+            + .contacts__link{
+                margin-left: 16px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    
+    .number{
+        color: #281D15;
+        font-weight: 700;
+        padding-left: 32px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            background-image: url('img/phone.png');
+        }
+        &--color{
+            color: white;
+        }
+    }
+    .mail{
+        color: #281D15;
+        font-weight: 700;
+        padding-left: 32px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            background-image: url('img/Mail.png');
+        }
+        &--color{
+            color: white;
+        }
+    }
+</style>
